@@ -27,6 +27,10 @@ namespace WarriorAnimsFREE
 		public bool dashstartUp;
 		public int dashcoutner;
 
+		[Header("Particals")]
+		public Transform particalspawnpoint;
+		public GameObject dasheffect;
+
 		[HideInInspector] public Vector3 lookDirection { get; private set; }
 
 		private void Start()
@@ -149,6 +153,7 @@ namespace WarriorAnimsFREE
 			yield return new WaitForSeconds(1*1/2);
             if (dashcoutner != 2)
             {
+				//Instantiate(dasheffect, particalspawnpoint,transform);
 				this.gameObject.GetComponent<Rigidbody>().transform.position = Vector3.MoveTowards(transform.position, dashpoint.transform.position, dashDistance);
 				dashcoutner++;
 				Debug.Log("dashed");

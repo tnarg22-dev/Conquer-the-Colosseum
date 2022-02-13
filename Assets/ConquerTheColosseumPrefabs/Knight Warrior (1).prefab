@@ -36,6 +36,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1472626548553455961}
+  - {fileID: 7707791982883602696}
   - {fileID: 6095894824748897544}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -105,6 +106,9 @@ MonoBehaviour:
   dashDistance: 5
   dashpoint: {fileID: 6095894824748897652}
   dashstartUp: 0
+  dashcoutner: 0
+  particalspawnpoint: {fileID: 7707791982883602696}
+  dasheffect: {fileID: 0}
 --- !u!114 &3722177260282794672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2063,7 +2067,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 940613997646166974}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6095894824748897545
 MeshFilter:
@@ -2127,6 +2131,36 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7544731631532218689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7707791982883602696}
+  m_Layer: 0
+  m_Name: Partical Spawn Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7707791982883602696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7544731631532218689}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.05, z: -0.62}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_Children: []
+  m_Father: {fileID: 940613997646166974}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8572301029202415023
 GameObject:
   m_ObjectHideFlags: 0
