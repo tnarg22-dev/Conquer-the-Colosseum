@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace WarriorAnimsFREE
 {
@@ -12,13 +13,19 @@ namespace WarriorAnimsFREE
 		public float runSpeed = 6f;
 		private readonly float rotationSpeed = 40f;
 		public float groundFriction = 50f;
-		[HideInInspector] public Vector3 currentVelocity;
+		public Vector3 currentVelocity;
 
 		[Header("Jumping")]
 		public float gravity = 25.0f;
 		public float jumpAcceleration = 5.0f;
 		public float jumpHeight = 3.0f;
 		public float inAirSpeed = 6f;
+
+		[Header("Dashing")]
+		public float dashDistance = 5;
+		public GameObject dashpoint;
+		public bool dashstartUp;
+		public int dashcoutner;
 
 		[HideInInspector] public Vector3 lookDirection { get; private set; }
 
@@ -61,6 +68,10 @@ namespace WarriorAnimsFREE
 					warriorController.SetAnimatorBool("Moving", false);
 					warriorController.SetAnimatorFloat("Velocity", 0);
 				}
+                if (Input.GetButtonDown("Dash"))
+                {
+					StartCoroutine(Playerdash());
+                }
 			}
 
 			RotateTowardsMovementDir();
@@ -132,6 +143,24 @@ namespace WarriorAnimsFREE
 		{
 			warriorController.SetAnimatorBool("Moving", true);
 		}
+		IEnumerator Playerdash()
+        {
+
+			yield return new WaitForSeconds(1*1/2);
+            if (dashcoutner != 2)
+            {
+				this.gameObject.GetComponent<Rigidbody>().transform.position = Vector3.MoveTowards(transform.position, dashpoint.transform.position, dashDistance);
+				dashcoutner++;
+				Debug.Log("dashed");
+
+            }
+            else {
+				yield return new WaitForSeconds (2);
+				dashcoutner = 0;
+			}
+			
+
+        }
 
 		private void Move_SuperUpdate()
 		{
@@ -204,7 +233,7 @@ namespace WarriorAnimsFREE
 			// Normal gravity.
 			currentVelocity -= warriorController.superCharacterController.up * gravity * warriorController.superCharacterController.deltaTime;
 		}
-
+		
 		private void Fall_ExitState()
 		{
 			warriorController.SetAnimatorInt("Jumping", 0);
