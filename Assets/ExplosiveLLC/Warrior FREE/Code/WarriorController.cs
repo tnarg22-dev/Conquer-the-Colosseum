@@ -341,7 +341,7 @@ namespace WarriorAnimsFREE
 		public void SetAnimatorInt(string name, int i)
 		{
 			//Debug.Log("SetAnimatorInt: " + name + i);
-			animator.SetInteger(name, i);
+			animator.SetInteger(name, i);	
 		}
 
 		/// <summary>
