@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63ea718dd151e8c409b0e8452b9e422d, type: 3}
+  m_Name: Readme
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  title: Health System
+  sections:
+  - heading: Test it out!
+    text: 'Check out an interactive example in the folder NoobGameDev/Health System
+      then double click the ExampleScene. You can also playtest a demo in the link
+      below:'
+    linkText: Health System For Dummies Web Build
+    url: https://play.unity.com/mg/other/health-system-for-dummies
+  - heading: How to use
+    text: 
+    linkText: Health System For Dummies Guide
+    url: https://pacific-barber-b62.notion.site/Detailed-PDF-Guide-2a3db422154248948085a128a392b6ad
+  - heading: 'Author: <b>NoobGameDev</b>'
+    text: 
+    linkText: 
+    url: 
+  - heading: 
+    text: 'Feel free to send feedback or to ask any questions you have regarding
+      this asset on my email: thenoobgamedev@gmail.com'
+    linkText: 
+    url: 
+  - heading: 
+    text: 'Credit for the knight sprites: CraftPix.net 2D Game Assets'
+    linkText: 
+    url: 
+  loadedLayout: 1
