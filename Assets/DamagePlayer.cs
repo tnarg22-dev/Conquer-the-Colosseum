@@ -2,11 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+public class DamagePlayer : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int PlayerHp = 100;
-    public Animator Animator;
     void Start()
     {
         
@@ -15,14 +13,13 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerDeath();
+        
     }
-    void playerDeath()
+    private void OnTriggerEnter(Collider other)
     {
-        if(PlayerHp <= 0)
+        if(other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject,2);   
+            other.GetComponent<PlayerHealth>().PlayerHp = other.GetComponent<PlayerHealth>().PlayerHp - 10;
         }
     }
-    
 }

@@ -5,94 +5,75 @@ using UnityEngine;
 public class Skeleton : MonoBehaviour
 {
     // Start is called before the first frame update
-    public GameObject explosion;
-    public GameObject explosionpoint;
+
     public GameObject player;
-    int layerMask = 1 << 8;
+    int layerMask = 1>>6;
     public int speed = 4;
     public int maxspeed = 4;
     public int walkspeed = 2;
     public bool isMoving = true;
     public Animator EnemyAnimator;
+    public float countDown = 0.5f;
+    public float maxtime = 0.5f;
+    public int health = 10;
 
     void Start()
     {
-        
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+      if(health <= 0)
+        {
+            isMoving = false;
+            EnemyAnimator.SetTrigger("dead");
+            Destroy(this.gameObject, 3);
 
+        }
 
-        if (!isMoving)
+    }
+   void FixedUpdate()
+    {
+          if (isMoving == false)
         {
             EnemyAnimator.SetBool("Attack", true);
             EnemyAnimator.SetBool("Moving", false);
         }
-        if (isMoving)
+        if (isMoving == true)
         {
             transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
             Vector3 targetDirection = player.transform.position - transform.position;
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, speed * Time.deltaTime, 0.0f);
             transform.rotation = Quaternion.LookRotation(newDirection);
             EnemyAnimator.SetBool("Moving", true);
-            
+
 
         }
-    
-        MovementChecker();
-
-
-       
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Player")
-        {
-            Instantiate(explosion,explosionpoint.transform);
-        }
-    }
-    public void MovementChecker()
-        {
-        RaycastHit hit;
-            Physics.Raycast(transform.position, player.transform.position - transform.position, out hit, 2f, layerMask);
-                if (hit.collider == null)
-        {
-            Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
-            isMoving = true;
-
-
-
-        }
-
-                if (hit.collider != null)
+        if (other.gameObject.tag == "Player")
         {
             isMoving = false;
-            Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
- 
+
         }
-
-
-        RaycastHit CloseCheck;
-           Physics.Raycast(transform.position, player.transform.position - transform.position, out CloseCheck, 5f, layerMask);
-            if(CloseCheck.collider == null)
+        if(other.gameObject.tag == "PlayerWeapon")
         {
-            Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.red);
-            EnemyAnimator.SetBool("CloseToPlayer", false);
-            speed = maxspeed;
-
+            EnemyAnimator.SetTrigger("hit");
+            health = health - 5;
+            
         }
-
-            if(CloseCheck.collider != null)
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
         {
- 
-            Debug.DrawRay(transform.position, player.transform.position - transform.position, Color.green);
-            EnemyAnimator.SetBool("CloseToPlayer", true);
-            speed = walkspeed;
-        }
+            isMoving = true;
 
         }
-       
-        
+    }
+
+
 }

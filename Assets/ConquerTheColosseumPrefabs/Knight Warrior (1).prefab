@@ -421,13 +421,14 @@ GameObject:
   - component: {fileID: 1710872987079534856}
   - component: {fileID: 7127645131465847381}
   - component: {fileID: 6063912800411258037}
+  - component: {fileID: 6241475298063765517}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: PlayerWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6043661651466571612
 Transform:
   m_ObjectHideFlags: 0
@@ -435,13 +436,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6148134408581313183}
-  m_LocalRotation: {x: 0.48316288, y: -0, z: -0, w: 0.8755305}
-  m_LocalPosition: {x: 0, y: 1.995, z: 1.744}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.21939187, y: -0.6072264, z: 0.51569545, w: 0.5632066}
+  m_LocalPosition: {x: -0.29, y: 2.266, z: -1.25}
+  m_LocalScale: {x: 0.79636306, y: 1, z: 0.716}
   m_Children: []
   m_Father: {fileID: 1472626548553455961}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 57.784, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60.858, y: -70.034, z: 40.219}
 --- !u!33 &1710872987079534856
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -457,7 +458,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6148134408581313183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -505,6 +506,18 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6241475298063765517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6148134408581313183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b4ac63f75377d54aa3f849cd582efb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7544731631532218689
 GameObject:
   m_ObjectHideFlags: 0
