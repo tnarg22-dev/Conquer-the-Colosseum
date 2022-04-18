@@ -17,7 +17,8 @@ GameObject:
   - component: {fileID: 3722177260282794670}
   - component: {fileID: 8785987535741960031}
   - component: {fileID: 6095894824162478598}
-  - component: {fileID: 2139594819642866526}
+  - component: {fileID: 3020783332365880886}
+  - component: {fileID: 8618191584184025509}
   m_Layer: 0
   m_Name: Knight Warrior (1)
   m_TagString: Player
@@ -204,7 +205,118 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerHp: 100
---- !u!114 &2139594819642866526
+  Animator: {fileID: 0}
+  health1: {fileID: 0}
+  health2: {fileID: 0}
+  health3: {fileID: 0}
+  health4: {fileID: 0}
+  health5: {fileID: 0}
+  health6: {fileID: 0}
+  health7: {fileID: 0}
+  health8: {fileID: 0}
+  health9: {fileID: 0}
+  health10: {fileID: 0}
+  deathoverlay: {fileID: 0}
+  explosion: {fileID: 0}
+  isdead: 0
+  deathtimer: 2
+--- !u!82 &3020783332365880886
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940613997645932446}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7553f982c81dce7419bf29abb933d746, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 5.2586255
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &8618191584184025509
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,24 +325,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 940613997645932446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 838309562495a0244b14dc08b90778c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 292e44d5cf42d004c9816c6acd99c7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsAlive: 1
-  CurrentHealth: 1000
-  MaximumHealth: 1000
-  HasAnimationWhenHealthChanges: 1
-  AnimationDuration: 0.1
-  OnCurrentHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnIsAliveChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  OnMaximumHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  HealthBarPrefabToSpawn: {fileID: 8459761256327841958, guid: 8d33425d7a2a5394ba6dc22e7de6306c, type: 3}
+  swing: {fileID: 3020783332365880886}
 --- !u!1 &5172894742821752383
 GameObject:
   m_ObjectHideFlags: 0
@@ -261,7 +359,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1472626548553455961}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: -90, z: 0}
 --- !u!20 &8874490625773092568
 Camera:
@@ -441,7 +539,7 @@ Transform:
   m_LocalScale: {x: 0.79636306, y: 1, z: 0.716}
   m_Children: []
   m_Father: {fileID: 1472626548553455961}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 60.858, y: -70.034, z: 40.219}
 --- !u!33 &1710872987079534856
 MeshFilter:
@@ -503,9 +601,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
-  m_Height: 2
+  m_Height: 3.3449767
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.00000003978114, y: 0.6724884, z: -0.00000091864246}
 --- !u!114 &6241475298063765517
 MonoBehaviour:
   m_ObjectHideFlags: 0

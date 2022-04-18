@@ -16,10 +16,12 @@ public class Skeleton : MonoBehaviour
     public float countDown = 0.5f;
     public float maxtime = 0.5f;
     public int health = 10;
+    [SerializeField] private GameObject gethealthsystemobject;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player");
+       
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class Skeleton : MonoBehaviour
     {
           if (isMoving == false)
         {
-            EnemyAnimator.SetBool("Attack", true);
+            EnemyAnimator.SetBool("Attacking", true);
             EnemyAnimator.SetBool("Moving", false);
         }
         if (isMoving == true)

@@ -20,6 +20,7 @@ public class DamagePlayer : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             other.GetComponent<PlayerHealth>().PlayerHp = other.GetComponent<PlayerHealth>().PlayerHp - 10;
+            Debug.Log("player hit");
         }
     }
 }

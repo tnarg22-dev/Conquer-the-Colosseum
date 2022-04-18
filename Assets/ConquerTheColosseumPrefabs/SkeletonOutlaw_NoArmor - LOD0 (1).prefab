@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6816850891510132191}
   - component: {fileID: 584346104443057222}
   - component: {fileID: 1274028681515679594}
+  - component: {fileID: 3828691005017263173}
   m_Layer: 0
   m_Name: Attack0Hitbox
   m_TagString: Untagged
@@ -90,11 +91,23 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467590988133881084}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.50000006
   m_Center: {x: -1.1368684e-13, y: 0, z: 0.0000004768373}
+--- !u!114 &3828691005017263173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467590988133881084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73dfc78e87e7f946b690c850e28dc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6055458665839865146
 GameObject:
   m_ObjectHideFlags: 0
@@ -107,6 +120,7 @@ GameObject:
   - component: {fileID: 4371482545945661796}
   - component: {fileID: 7744585392445255851}
   - component: {fileID: 2891965863943882160}
+  - component: {fileID: 7457522557786359712}
   m_Layer: 0
   m_Name: Attack1Hitbox
   m_TagString: Untagged
@@ -185,11 +199,23 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6055458665839865146}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.50000006
   m_Center: {x: -1.1368684e-13, y: 0, z: 0.0000004768373}
+--- !u!114 &7457522557786359712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6055458665839865146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73dfc78e87e7f946b690c850e28dc02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7885916410524996166
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,7 +995,7 @@ GameObject:
   - component: {fileID: 7808259322571406381}
   m_Layer: 7
   m_Name: SkeletonOutlaw_NoArmor - LOD0 (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -982,7 +1008,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7886354741835008376}
   m_LocalRotation: {x: -0, y: -0.9952359, z: -0, w: 0.09749608}
-  m_LocalPosition: {x: 7.88, y: -0.09, z: -5.8}
+  m_LocalPosition: {x: 7.899, y: -0.09, z: -5.702}
   m_LocalScale: {x: 1.2000003, y: 1.2, z: 1.2000003}
   m_Children:
   - {fileID: 7888248711797076464}
@@ -1048,6 +1074,7 @@ MonoBehaviour:
   countDown: 0.5
   maxtime: 0.5
   health: 10
+  gethealthsystemobject: {fileID: 0}
 --- !u!136 &6496097590007049512
 CapsuleCollider:
   m_ObjectHideFlags: 0
